@@ -1,0 +1,796 @@
+body
+  font: 700 16px/24px 'Montserrat'
+  color: #171717
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+*, *::after, *::before
+  box-sizing: border-box
+a
+  text-decoration: none
+  color: inherit
+
+input, textarea, select
+  -webkit-appearance: none
+  outline: none
+  appearance: none
+  border: none
+  padding: 18px 20px
+
+  font: 400 15px/1 'Nunito Sans'
+  color: #787878
+  box-sizing: border-box
+
+  transition: outline-color .5s
+
+  &:active, &:focus
+    outline: 2px solid #10c9c3
+ul, li
+  list-style: none
+  margin: 0
+  padding: 0
+  font: 400 15px/24px 'Nunito Sans'
+  color: #bcbcbc
+.btn
+  display: inline-block
+  padding: 20px 45px
+  background-color: #10c9c3
+  color: #fff
+  font-size: 12px
+  line-height: 1
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: 1px
+  white-space: nowrap
+
+  transition: transform .5s ease, background-color .5s ease-in-out
+
+  &:hover, &:active, &:focus
+    background-color: #13c1bb
+    transform: scale(0.9)
+
+.container
+  margin: 0 auto
+  max-width: 1170px
+
+.grid
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+// Header style
+.header
+  background-color: #fff
+  border-bottom: 1px solid #8d8989
+  padding: 0 15px
+  position: fixed
+  top: 0
+  left: 0
+
+  width: 100%
+  z-index: 1000
+  height: 100px
+
+  &__container
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    align-items: center
+    height: 100px
+    position: relative
+
+  &__nav
+    min-width: 640px
+
+    &_home
+      min-width: 215px
+
+  &__burger
+    display: none
+    position: absolute
+    width: 50px
+    height: 50px
+    right: 0
+    top: 50px
+
+    .lines
+      width: 30px
+      height: 3px
+      background-color: #000
+      position: relative
+      transition: background-color .2s
+
+      &::after, &::before
+        width: 30px
+        height: 3px
+        content: ''
+        position: absolute
+        display: block
+        left: 0
+        background-color: #000
+        transition: transform .5s
+
+      &::after
+        top: -10px
+
+      &::before
+        bottom: -10px
+
+      &.active
+        background-color: transparent
+
+      &.active::before
+        transform: rotate(-45deg)
+        bottom: 0
+
+      &.active::after
+        transform: rotate(45deg)
+        top: 0
+
+.nav
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+  &__link.active
+    color: #10c9c3
+
+  &__link:hover, &__link:active, &__link:focus
+    color: #787878
+
+  &__link.active:hover, &__link.active:active, &__link.active:focus
+    color: #10c9c3
+
+// Banner style
+.banner
+  background: url("../img/banner-bg.jpg") no-repeat center
+  -webkit-background-size: cover
+  background-size: cover
+  min-height: 100vh
+  padding-bottom: 20px
+
+  .container
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    flex-wrap: wrap
+    height: 100vh
+
+  &__container
+    max-width: 560px
+    padding: 0 40px
+
+
+  &__title
+    font-size: 38px
+    line-height: 48px
+    color: #1d1d1d
+
+  &__text
+    font: 400 18px/28px 'Nunito Sans'
+    color: #787878
+    margin-bottom: 35px
+
+// About us style
+.about-us
+  padding: 50px 0
+
+  &__container
+    max-width: 670px
+    padding: 0 20px
+    margin: 0 auto
+    text-align: center
+    font-weight: 400
+
+  &__title
+    font-weight: 400
+    letter-spacing: 2px
+    font-size: 30px
+    line-height: 60px
+
+  &__text
+    color: #787878
+    margin-bottom: 30px
+    font-family: "Nunito Sans", serif
+
+// Skills style
+.skills
+  background: #d3d8db
+  padding: 145px 0 150px
+  position: relative
+
+  &::after
+    content: ""
+    display: block
+    position: absolute
+    width: 50%
+    height: 100%
+    top: 0
+    right: 0
+    background: #d3d8db url("../img/skills-pencils.jpg") no-repeat
+    -webkit-background-size: cover
+    background-size: cover
+
+  &__container
+    max-width: 540px
+    padding: 0 20px
+
+  &__title
+    font-size: 30px
+    line-height: 1
+    margin-bottom: 30px
+    margin-top: 0
+    position: relative
+    z-index: 3
+
+.stat
+  color: black
+  font-size: 12px
+  line-height: 30px
+  margin-bottom: 30px
+  text-transform: uppercase
+  position: relative
+
+  &::before
+    content: ""
+    display: block
+    position: absolute
+    bottom: -10px
+    left: 0
+    z-index: 2
+    width: 100%
+    height: 2px
+    background-color: gray
+
+  &__percent
+    margin-left: 15px
+
+  &:first-child::after, &:last-child::after, &:nth-child(2)::after
+    content: ""
+    display: block
+    position: absolute
+    bottom: -10px
+    left: 0
+    z-index: 3
+    width: 75%
+    height: 2px
+    background-color: #10c9c3
+
+  &:nth-child(2)::after
+    width: 90%
+
+  &:last-child::after
+    width: 65%
+
+// Numbers style
+.numbers
+  background-color: #10c9c3
+  padding: 85px 0
+  color: white
+
+  &__container
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+  &__item
+    display: flex
+    align-items: center
+
+.number
+  max-width: 270px
+  padding: 5px 15px
+
+  &__pic
+    margin-right: 30px
+
+  &__count
+    font: 700 18px/30px 'Montserrat'
+
+  &__subtitle
+    font: 400 12px/24px 'Montserrat'
+// Work style
+.work
+  &__item
+    font-size: 0
+    line-height: 0
+    position: relative
+    height: 400px
+
+    &::before
+      content: ""
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 0
+      background: rgba(0, 0, 0, .8) url("../img/work-eye.png") no-repeat center
+      transition: height 0.3s
+
+    &:hover::before
+      height: 100%
+
+    @for $i from 1 to 9
+      &:nth-child(#{$i})
+        background: url("../img/work/#{$i}.jpg") no-repeat center
+        background-size: 50%
+
+    @for $i from 1 to 5
+      &:nth-last-child(#{$i})
+        background: url("../img/work/#{$i}.jpg") no-repeat center
+        background-size: 50%
+        display: none
+
+  &__load
+    background-color: #f5f5f5
+    font-size: 12px
+    color: #8e8e8e
+    text-align: center
+    padding: 40px 0
+
+  &__link:hover
+    color: #565656
+// Work process style
+.work-process
+  text-align: center
+  padding: 100px 0
+
+  &__top
+    max-width: 500px
+    margin: 0 auto 55px
+
+  &__title
+    margin: 0 0 40px
+    font-size: 30px
+
+  &__text
+    font: 400 16px/24px 'Nunito Sans'
+    color: #787878
+
+  &__video iframe
+    width: 100%
+    height: 570px
+// Services style
+.services
+  text-align: center
+  background-color: #f5f5f5
+  padding: 100px 0
+
+  &__items
+    grid-row-gap: 50px
+
+  &__item
+    max-width: 270px
+    padding: 0 20px
+
+    &__title
+      text-transform: uppercase
+      color: #191919
+      font-size: 12px
+      line-height: 30px
+
+    &__text
+      font: 400 16px/24px 'Nunito Sans'
+      margin: 0
+// Testimonials style
+.testimonials
+  text-align: center
+  padding: 180px 20px 50px 20px
+  background-color: #10c9c3
+  color: white
+
+  &__container
+    max-width: 860px
+    margin: 0 auto
+
+  &__text
+    display: inline-block
+    margin-bottom: 20px
+    font-weight: 500
+    font-size: 24px
+    line-height: 36px
+
+  &__author
+    font-size: 12px
+    line-height: 36px
+    text-transform: uppercase
+    letter-spacing: 1.5px
+    font-weight: 600
+    margin-bottom: 100px
+
+#carousel.owl-theme .owl-dots
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .owl-dot
+    border: none
+    outline: none
+
+    span
+      background-color: #b0e8e6
+      width: 6px
+      height: 6px
+
+#carousel.owl-theme .owl-dots .owl-dot.active span
+  background-color: #fff
+  width: 10px
+  height: 10px
+// Clients style
+.clients
+  padding: 65px 20px
+  &__container
+    display: flex
+    justify-content: space-between
+// Profile style
+.profile
+  padding: 100px 20px
+  background-color: #f5f5f5
+
+  &__container
+    max-width: 670px
+    margin: 0 auto
+
+  &__top
+    text-align: center
+    margin-bottom: 10px
+
+  &__title
+    margin: 0 0 40px
+    font-size: 30px
+
+  &__text
+    font: 400 16px/24px 'Nunito Sans'
+    color: #787878
+
+  &__bottom
+    text-align: center
+
+  &__form
+    margin-bottom: 25px
+
+.form
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 25px 30px
+
+  &__input
+    &:nth-child(3), &:last-child
+      grid-column: 1/3
+
+    & input
+      width: 100%
+      height: 45px
+
+  &__textarea
+    grid-column: 1/3
+
+    & textarea
+      width: 100%
+      height: 170px
+      resize: none
+// Footer style
+.footer
+  background-color: #141414
+  padding: 70px 20px 90px
+
+  &__container, &__navigation
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+  &__copyright, &__navigation
+    padding-top: 20px
+
+  &__contacts
+    padding: 20px 10px 0
+
+  &__column
+    &:last-child
+      margin-left: 135px
+
+    &:nth-child(2)
+      padding: 0 10px
+
+    &:first-child
+      margin-right: 55px
+
+  &__link:hover
+      color: white
+
+.copyright
+  color: #bcbcbc
+  max-width: 225px
+
+  &__title
+    color: white
+    font-size: 18px
+    margin: 0
+
+  &__text
+    font: 400 15px/24px 'Nunito Sans'
+// about.html style
+.about-banner
+  padding: 190px 0 100px
+  background-color: #3e3e3e
+  color: white
+  text-align: center
+
+  &__container
+    max-width: 515px
+    margin: 0 auto
+
+  &__title
+    font-size: 38px
+    line-height: 48px
+    font-weight: 600
+
+  &__text
+    font: 400 18px/28px 'Nunito Sans'
+
+  @media (max-width: 705px)
+    padding: 40px 0 50px
+
+.about-me
+  display: grid
+  grid-template-columns: 50% 50%
+  background-color: #f5f5f5
+  min-height: 570px
+
+  &__img
+    background: url("../img/about/about-me-bg.jpg") no-repeat center
+    -webkit-background-size: cover
+    background-size: cover
+    height: auto
+
+  &__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+  &__container
+    max-width: 500px
+    margin: 0 auto
+    padding: 0 30px 20px
+
+  &__title
+    font-size: 30px
+    line-height: 50px
+
+  &__text
+    font: 400 18px/1.4 'Nunito Sans'
+    color: #787878
+    margin-bottom: 35px
+
+  @media (max-width: 575px)
+    height: auto
+    grid-template-columns: 1fr
+    grid-auto-rows: 1fr 1fr
+.need-a-project
+  padding: 100px 0
+  text-align: center
+
+  &__container
+    max-width: 535px
+    margin: 0 auto
+
+  &__title
+    font-size: 30px
+    line-height: 50px
+    margin: 0
+
+  &__text
+    font: 400 18px/1.4 'Nunito Sans'
+    color: #787878
+    margin-bottom: 35px
+
+  @media (max-width: 705px)
+    padding: 50px 0
+// contact.html style
+.contact-info
+  font: 400 16px/24px 'Nunito Sans'
+  padding: 180px 0 100px
+  background-color: #f5f5f5
+
+  &__container
+    display: grid
+    grid-template-columns: 5fr 7fr
+    column-gap: 30px
+    padding: 0 20px
+
+  &__title
+    margin: 0
+    font: 700 30px/84px 'Montserrat'
+
+  &__text
+    color: #787878
+
+.feedback
+  color: #787878
+  font: 400 16px/36px 'Nunito Sans'
+
+  b
+    color: black
+.map
+  background-color: #f5f5f5
+  font-size: 0
+  padding-bottom: 100px
+
+// Media width 1440px
+@media (max-width: 1440px)
+  .work__item
+      height: 300px
+// Media width 900px
+@media (max-width: 900px)
+  .numbers
+
+    padding: 20px 0
+
+    &__container
+      display: grid
+      grid-template-columns: 1fr 1fr
+      gap: 20px 0
+      max-width: 750px
+      margin: 0 auto
+
+    &__item
+      justify-content: center
+
+  .number
+    max-width: 100%
+
+  .skills::after
+    width: 35%
+
+  .contact-info
+    padding: 100px 0 100px
+
+    &__container
+      grid-template-columns: 1fr
+      row-gap: 50px
+
+// Media width 865px
+@media (max-width: 865px)
+  .footer
+
+    &__container, &__navigation
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+
+    &__column
+      &:last-child
+        margin-left: 0
+
+      &:first-child
+        margin-right: 0
+// Media width 705px
+@media (max-width: 705px)
+  .header
+
+    background-color: transparent
+    border: none
+
+    &__logo
+      display: none
+
+    &__nav
+      min-width: 0
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-end
+      font-size: 30px
+      line-height: 1.2
+      padding: 60px 20px 15px
+      position: absolute
+      top: 23px
+      right: 0
+      transform: translateX(110%)
+      transition: transform .5s
+      text-shadow: 1px 1px white
+      background-color: rgba(77, 77, 77, .7)
+
+      &.active
+        transform: translateX(0)
+
+      .nav__item
+        margin-bottom: 10px
+
+    &__burger
+      display: block
+
+  .work
+    .grid
+      grid-template-columns: repeat(2, 1fr)
+
+  .contact-info
+    padding: 50px 0 70px
+
+    &__container
+      grid-template-columns: 1fr
+      row-gap: 50px
+
+  .map
+    padding-bottom: 50px
+// Media width 575px
+@media (max-width: 575px)
+  .grid
+    grid-template-columns: repeat(2, 1fr)
+
+  .banner
+    background: url("../img/banner-bg.jpg") no-repeat right
+
+  .about-us
+    padding: 20px 0
+
+  .skills
+    padding: 45px 0 40px
+
+    &__title
+      font-size: 25px
+
+    &__stat
+      font-size: 10px
+
+  .work
+
+    &__item
+      height: 200px
+
+    &__load
+      padding: 20px 0
+
+  .work-process
+    padding: 30px 0
+
+    &__top
+      padding: 0 20px
+
+    &__video iframe
+      height: 260px
+
+  .services
+    padding: 30px 0
+
+    &__items
+      grid-row-gap: 20px
+
+  .testimonials
+    padding: 80px 20px 50px
+
+    &__text
+      font-size: 18px
+      line-height: 1.2
+
+    &__author
+      font-size: 12px
+      line-height: 2
+      margin-bottom: 20px
+
+    &__quote
+      margin-bottom: 50px
+
+  .clients
+    padding: 30px 0
+
+    &__container
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 20px 0
+
+    &__item
+      display: flex
+      justify-content: center
+
+      &:last-child
+        grid-column: 1/3
+
+  .profile
+    padding: 50px 20px
+
+  .footer
+    padding: 30px 20px 50px
+
+  .map iframe
+    height: 300px
